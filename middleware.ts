@@ -9,6 +9,7 @@ export default authMiddleware({
   // Prevent the specified routes from accessing
   // authentication information:
   // ignoredRoutes: ['/no-auth-in-this-route'],
+  publicRoutes: ["/","/api/webhooks/clerk"],
 });
  
 export const config = {
@@ -17,6 +18,7 @@ export const config = {
     // Exclude files in the _next directory, which are Next.js internals.
  
     "/((?!.+\\.[\\w]+$|_next).*)",
+    "/",
     // Re-include any files in the api or trpc folders that might have an extension
     "/(api|trpc)(.*)"
   ]
