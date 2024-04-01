@@ -48,7 +48,7 @@ const toBase64 = (str: string) =>
     : window.btoa(str);
 
 export const dataUrl = `data:image/svg+xml;base64,${toBase64(
-  shimmer(1000, 1000)
+  shimmer(1000, 1000) //slowly load until we get real image 
 )}`;
 // ==== End
 
@@ -93,7 +93,7 @@ export const debounce = (func: (...args: any[]) => void, delay: number) => {
   };
 };
 
-// GE IMAGE SIZE
+// GET IMAGE SIZE
 export type AspectRatioKey = keyof typeof aspectRatioOptions;
 export const getImageSize = (
   type: string,
